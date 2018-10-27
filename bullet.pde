@@ -4,6 +4,7 @@ class Bullet{
   boolean hasCollided, isLooping; //For basic checks so we stop drawing it
   color c = color(255,0,0);
   
+  //Constructors
   public Bullet(float iX, float iY, int imageX, int imageY){
     x = iX;
     y = iY;
@@ -35,8 +36,10 @@ class Bullet{
     this.baseY = baseY;
   }
   
+  //Basic Methods
   public void setColor(int col){c = col;}
   
+  //Game Logic/Patterns
   public void gameLogic(int pattern){
     if(isLooping){
        if(y > height + imageY) y = -imageY; 
