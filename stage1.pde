@@ -6,6 +6,7 @@ class Stage1{
   Boss boss;
   playerShip p;
   
+  //Constructor
   public Stage1(playerShip p){
      timer = 0;
      pattern = -1;
@@ -14,6 +15,7 @@ class Stage1{
      bP = startingPattern();
   }
 
+  //Logic
   public void logic(){
     timer++;
     
@@ -399,7 +401,7 @@ class Stage1{
          }
        }break;
        case(10):{
-          /*switch(timer){
+          switch(timer){
              case(50):  boss.setTargets(width*.25,height*.25); break;
              case(100): boss.setTargets(width*.75,height*.25); break;
              case(150): boss.setTargets(width*.5,height*.5); break;
@@ -408,8 +410,7 @@ class Stage1{
              case(250): boss.setTargets(width*.5,height*.65); break;
              case(275): boss.setTargets(width*.5,height*.5); break;
              case(300): boss.setTargets(width*.5,-height); break;
-             
-          }*/
+          }
           if(timer >= maxTim){
             player.win();     
           }
@@ -417,6 +418,7 @@ class Stage1{
     }
   }
   
+  //General Methods
   public void increasePattern(){
       if(!p.gameOver) {
             timer = 0;
@@ -609,6 +611,7 @@ class Stage1{
   return bullets;
   }
   
+  //Drawing
   void draw(){
     fill(0,0,0);
     //text(timer,width*.5,20);
