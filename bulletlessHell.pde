@@ -24,11 +24,11 @@ void setup(){
    name = "";
    scorePos = -1;
 }
-
-  ArrayList<Float> loadScores(){
+   
+  //Score Table Handling
+  ArrayList<Float> loadScores() {
     ArrayList<Float> tempScores = new ArrayList<Float>();
     ArrayList<String> tempNames = new ArrayList<String>();
-    
     
     try{
       highLoad = createReader("highscores.txt");
@@ -94,6 +94,7 @@ void setup(){
     highSave.close();
   }
 
+//Drawing/Logic
 void draw(){
    clear();
    background(0); 
