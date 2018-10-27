@@ -5,6 +5,7 @@ class Boss{
    color bulletColor = color(128,0,0);
    playerShip player;
    
+   //Constructor
    public Boss(ArrayList<BulletParent> bP, float x, float y, playerShip p){
        bulletPatterns = bP;
        modX = 0.05; //easing value
@@ -16,6 +17,7 @@ class Boss{
        player = p;
    }
    
+   //Logic for Boss
    void logic(){
     if(bulletPatterns != null){
        for(BulletParent bulP : bulletPatterns){
