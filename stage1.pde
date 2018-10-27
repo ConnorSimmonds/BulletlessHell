@@ -1,4 +1,5 @@
-//stage1 - basically just keeps a record of all the patterns and manages how far we've gone through. Cycles through patterns until we've reached the end.
+//stage1 - basically just keeps a record of all the patterns and manages how far we've gone through. 
+//Cycles through patterns until we've reached the end.
 
 class Stage1{
   int pattern, timer, maxTim, stageGraphic, graphicTimer;
