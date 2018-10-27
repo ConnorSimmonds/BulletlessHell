@@ -151,6 +151,7 @@ class playerShip {
     }
   }
   
+  //Collision and Other General Methods
   boolean hasCollided(Bullet b){ //Checks if you've outright collided with an object (bullet)
     //We do collision checks.
     return (b.x == x);
@@ -169,8 +170,9 @@ class playerShip {
   }
   
   public void enter(){
-     cutscene = true; //Gotta make sure we're in the cutscene :ok_hand:
-     cutsceneTime++; //We want to increment our cutscene thing
+     //We've started, so enter the room.
+     cutscene = true; //Make sure we're in the cutscene
+     cutsceneTime++; //We want to increment our cutscene timer
      
      y = (yBase-16) + (pow(((cutsceneTime * .35 - 10)),2)); //This is a parabola, we wanna go UP out of this game world
      
@@ -182,10 +184,10 @@ class playerShip {
   
   public void win(){
      //We've won - so play out the win sequence
-     cutscene = true; //Gotta make sure we're in the cutscene :ok_hand:
-     cutsceneTime++; //We want to increment our cutscene thing
+     cutscene = true;
+     cutsceneTime++;
      
-     y = (yBase+16) + (-pow(((cutsceneTime * .35 - 4)),2)); //This is a parabola, we wanna go UP out of this game world
+     y = (yBase+16) + (-pow(((cutsceneTime * .35 - 4)),2));
      
      if(cutsceneTime >= 100){
         //We exit out 
