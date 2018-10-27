@@ -6,6 +6,12 @@ class BulletParent{
   ArrayList<Bullet> bulletArray, toBullet;
   int currentPattern = 0;
   
+  //Constructors
+  public BulletParent(){
+     //Empty bullet parent for the sake of error checking
+     bulletArray = new ArrayList<Bullet>();
+  }
+  
   public BulletParent(float Width, float Height, float iX, float iY, ArrayList<Bullet> bArray, playerShip p, int pattern){
      player = p;
      x = iX;
@@ -25,11 +31,6 @@ class BulletParent{
      bHeight = Height;
      bulletArray = bArray;
      this.p = pattern;
-  }
-  
-  public BulletParent(){
-     //Empty bullet parent for the sake of error checking
-     bulletArray = new ArrayList<Bullet>();
   }
   
   public BulletParent(float Width, float Height, float iX, float iY, ArrayList<Bullet> toB, int time, playerShip p, int pattern){
@@ -70,7 +71,7 @@ class BulletParent{
      this.p = pattern;
   }
   
-  //Collision stuff
+  //Collision
   public boolean isCollidingGeneric(){
     return isCollidingGenericX() && isCollidingGenericY();
   }
@@ -80,12 +81,10 @@ class BulletParent{
   }
   
   public boolean isBelow(){
-     // println((player.collisY + player.collisHig) + " : " + y + bHeight + " - " + (player.collisY + player.collisHig < y + bHeight));
      return (player.collisY - player.collisHig < y + bHeight);
   }
   
   public boolean isAbove(){
-    //println((player.collisY - player.collisHig) + " : " + (y - bHeight) + " - " + (player.collisY - player.collisHig > y - bHeight));
    return (player.collisY + player.collisHig > y - bHeight);
   }
   
@@ -128,7 +127,6 @@ class BulletParent{
       }
     }
     //Bullet Logic - All the fancy stuff either happens here (or in the bullets)
-    
     for(Bullet b : bulletArray) b.gameLogic(p[currentPattern]);
   }
   
@@ -139,9 +137,5 @@ class BulletParent{
      }
   }
   
-  public void draw(){
-     //rect(x-bWidth,y-bHeight,bWidth*2,bHeight*2);  
-     //if(debugCheck) rect(x-bWidth,y-bHeight,bWidth*2,bHeight*2);
-     for(Bullet b : bulletArray) if(!b.hasCollided) b.draw();
-  }
+  public void draw(){ for(Bullet b : bulletArray) if(!b.hasCollided) b.draw();}
 }
